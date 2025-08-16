@@ -1,1 +1,0 @@
-# python_project_about_school_fee_collection_system
