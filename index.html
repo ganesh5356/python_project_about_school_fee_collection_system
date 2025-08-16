@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>School Fee Collection System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>School Fee Collection System</h1>
+    <p>Track student registrations, payments, and dues easily</p>
+  </header>
+
+  <main class="container">
+
+    <form class="card" onsubmit="event.preventDefault(); registerStudent();">
+      <h2>Register Student</h2>
+      <input type="text" id="regName" placeholder="Full Name" required>
+      <input type="text" id="regRoll" placeholder="Roll Number" required>
+      <input type="text" id="regClass" placeholder="Class" required>
+      <input type="number" id="regFee" placeholder="Total Fee (₹)" required>
+      <button type="submit">Register</button>
+    </form>
+
+    <form class="card" onsubmit="event.preventDefault(); payFee();">
+      <h2>Pay Fee</h2>
+      <input type="text" id="payName" placeholder="Student Name" required>
+      <input type="number" id="payAmount" placeholder="Payment Amount (₹)" required>
+      <button type="submit">Pay Now</button>
+    </form>
+
+    <div class="card">
+      <h2>All Students</h2>
+      <button type="button" onclick="getAllStudents()">View All Records</button>
+      <div id="studentsTable">No records yet...</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 School Fee Management System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
