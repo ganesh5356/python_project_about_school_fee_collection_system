@@ -7,7 +7,7 @@ function renderTable(data) {
     <table border="1" cellpadding="5" cellspacing="0">
       <tr>
         <th>Name</th>
-        <th>Roll</th>
+        <th>Roll no</th>
         <th>Class</th>
         <th>Total Fee (₹)</th>
         <th>Paid (₹)</th>
@@ -50,6 +50,7 @@ async function registerStudent() {
   getAllStudents(); 
 }
 
+
 async function payFee() {
   const name = document.getElementById("payName").value;
   const amount = document.getElementById("payAmount").value;
@@ -81,3 +82,7 @@ async function getAllStudents() {
 
   document.getElementById("studentsTable").innerHTML = renderTable(data);
 }
+
+
+
+
