@@ -29,9 +29,16 @@
       <button type="submit">Pay Now</button>
     </form>
 
-    <div class="card">
-      <h2>All Students</h2>
-      <button type="button" onclick="getAllStudents()">View All Records</button>
+    <form class="card" onsubmit="event.preventDefault(); searchStudent();">
+    <h2>Search Student</h2>
+    <input type="text" id="searchName" placeholder="Enter Student Name" required>
+    <button type="submit">Search</button>
+    <div id="search"></div>
+    </form>
+
+    <div class="card1">
+      <h2>View Records</h2>
+      <button type="button" onclick="getAllStudents()">view all records</button>
       <div id="studentsTable">No records yet...</div>
     </div>
   </main>
