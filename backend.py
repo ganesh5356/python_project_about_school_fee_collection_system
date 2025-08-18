@@ -13,6 +13,7 @@ class Student:
 
     def pay(self, amount):
         self.paid += int(amount)
+    
 
     def to_dict(self):
         return {
@@ -35,6 +36,11 @@ class MyHandler(SimpleHTTPRequestHandler):
             roll = data.get("roll", [""])[0]
             class_name = data.get("class", [""])[0]
             total_fee = data.get("total_fee", ["0"])[0]
+
+            for s in students:
+                if s.roll == roll:
+                    self._send_json({"message": "Student already registered with same roll no"}, status=400)
+                    return 
 
             student = Student(name, roll, class_name, total_fee)
             students.append(student)
